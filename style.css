@@ -18,7 +18,8 @@
 }
 
 body {
-  font-family: Arial;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--mainBlack);
   background-color: var(--bodyColor);
   display: flex;
@@ -59,7 +60,7 @@ form input,
 form button {
   border: none;
   outline: none;
-  background-color: var(--mainWhite);
+  background-color: #adabab;
   font-size: 1rem;
   padding: 0.5rem;
 }
@@ -71,7 +72,8 @@ form button {
 }
 form button :hover {
   background-color: var(--primaryColor);
-  color: var(--mainWhite);
+  /*color: var(--mainWhite);*/
+  color: #bda3e7;
 }
 
 .todo {
@@ -103,4 +105,9 @@ form button :hover {
 
 .fa-square-check {
   color: var(--primaryColor);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
