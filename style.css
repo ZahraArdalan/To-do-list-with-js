@@ -111,3 +111,31 @@ form button :hover {
   text-decoration: line-through;
   opacity: 0.5;
 }
+
+select {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1rem;
+  color: var(--primaryColor);
+}
+
+.select {
+  margin-left: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  width: 10rem;
+  font-weight: hold;
+  position: relative;
+}
+
+.select::after {
+  content: "\25Bc";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: var(--primaryColor);
+  pointer-events: none;
+}

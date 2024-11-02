@@ -7,8 +7,11 @@ const todoButton = document.querySelector(".todo-button");
 
 const todoList = document.querySelector(".todo-container");
 
+const filterOption = document.querySelector(".filter-todos");
+
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", checkRemove);
+filterOption.addEventListener("click", filterTodos);
 
 function addTodo(ed) {
   // از رفرش کردن صفحه جلوگیری کند
@@ -39,4 +42,7 @@ function checkRemove(e) {
   }
 }
 
-
+function filterTodos(e) {
+  console.log(todoList.childNodes);
+  const todo = [...todoList.childNodes];
+}
