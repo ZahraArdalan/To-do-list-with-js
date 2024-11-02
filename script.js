@@ -1,13 +1,19 @@
+//کادری که کاربر اسم تسک را وارد میکنه
 const todoInput = document.querySelector(".todo-input");
+//   دکمه + برای اضافه کردن
+
 const todoButton = document.querySelector(".todo-button");
+// پاک کردن و خط زدن کارها
+
 const todoList = document.querySelector(".todo-container");
 
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", checkRemove);
 
-function addTodo(e) {
-  e.preventDefault();
-  console.log(e);
+function addTodo(ed) {
+  // از رفرش کردن صفحه جلوگیری کند
+  ed.preventDefault();
+  console.log(ed);
 
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
@@ -22,12 +28,15 @@ function addTodo(e) {
 function checkRemove(e) {
   const classList = [...e.target.classList];
   const item = e.target;
-  console.log(item.parentElment.parentElment);
+  console.log(item.parentElement.parentElement);
+
   if (classList[1] === "fa-square-check") {
-    const todo = item.parentElment.parentElment;
+    const todo = item.parentElement.parentElement;
     todo.classList.toggle("completed");
   } else if (classList[1] === "fa-trash-can") {
-    const todo = item.parentElment.parentElment;
+    const todo = item.parentElement.parentElement;
     todo.remove();
   }
 }
+
+
