@@ -42,7 +42,31 @@ function checkRemove(e) {
   }
 }
 
-function filterTodos(e) {
+function filterTodos(p) {
+  //console.log(e.target.value);
   console.log(todoList.childNodes);
-  const todo = [...todoList.childNodes];
+  const todos = [...todoList.childNodes].filter(
+    (todo) => todo.nodeType === 1 && todo.classList.contains("todo")
+  );
+  todos.forEach((todo) => {
+    switch (p.target.value) {
+      case "all":
+        todo.style.display = "flex";
+        break;
+      case "completed":
+        if (todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+      case "uncompleted":
+        if (!todo.classList.contains("completed")) {
+          todo.style.display = "flex";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+    }
+  });
 }
